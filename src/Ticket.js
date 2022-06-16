@@ -8,6 +8,7 @@ const TicketInfo = ({ title, data }) => (
   </div>
 );
 
+
 const Ticket = () => {
   return (
     <div>
