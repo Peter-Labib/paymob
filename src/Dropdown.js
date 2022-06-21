@@ -15,10 +15,10 @@ const selectStyle = {
   input: (base, state) => ({
     ...base,
     // color: "white",
-    fontSize: "16px", 
-    padding: ".75rem"
+    fontSize: "16px",
+    padding: ".75rem",
   }),
-  
+
   indicatorSeparator: (base, state) => ({
     ...base,
     display: "none",
@@ -41,7 +41,7 @@ const selectStyle = {
     ...base,
     color: "white",
   }),
-  
+
   menu: (base, state) => ({
     ...base,
     fontSize: "10px",
@@ -73,12 +73,13 @@ const mainStyle = {
     ...base,
     background: "#EEEEEE;",
     borderRadius: "0px",
+    border: "none",
     width: "100%",
     // minHeight: 35,
-    "&:hover": {
-      borderColor: "transparent",
-      // boxShadow: "0 0 0 1px #757575",
-    },
+    // "&:hover": {
+    //   borderColor: "transparent",
+    //   // boxShadow: "0 0 0 1px #757575",
+    // },
   }),
   valueContainer: (base, state) => ({
     ...base,
@@ -97,7 +98,6 @@ const mainStyle = {
     ...base,
     color: "#757575",
   }),
-
 };
 
 const blueStyle = {
@@ -129,7 +129,6 @@ const blueStyle = {
     ...base,
     color: "white",
   }),
-
 };
 
 const Dropdown = ({
@@ -145,8 +144,7 @@ const Dropdown = ({
   fullWidth,
   className = "",
   labelStyles = {},
-  hasLabel = false,
-  label = "",
+  label,
   filterOption, // (option, rawInput) =>
   isDisabled = false,
 }) => {
@@ -154,9 +152,12 @@ const Dropdown = ({
     <div
       className={className ? className : fullWidth === undefined ? "" : "mt-4"}
     >
-      {hasLabel && (
-        <span className="mb-2 block text-slate-500 font-semibold text-left" style={{ ...labelStyles }}>
-          {label || placeholder}
+      {label && (
+        <span
+          className="mb-2 block text-xs font-semibold text-left"
+          style={{ ...labelStyles, color: "#7A869A" }}
+        >
+          {label}
         </span>
       )}
       <AsyncPaginate

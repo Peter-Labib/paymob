@@ -6,9 +6,24 @@
   .form-gap {
     @apply gap-y-4 gap-x-10;
   }
+
+  .section {
+    @apply p-1 md:py-10 md:px-4 lg:px-16;
+  }
 }
 
+@layer utilities {
+  .section__header {
+    color: #6b778c;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 2rem;
+  }
 
+  .min-h-70 {
+    min-height: 70vh;
+  }
+}
 
 body {
   margin: 0;
